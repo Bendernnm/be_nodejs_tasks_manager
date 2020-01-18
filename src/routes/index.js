@@ -1,8 +1,12 @@
 const express = require('express');
 
+const { attachDb } = require('../middlewares');
+
 const { Errors, ErrorHandlers, ERROR_CODES } = require('../helpers/error');
 
 const router = express.Router();
+
+router.use(attachDb);
 
 router.get('/', async (req, res) => res.status(200).send({ message: 'API ash 2.o' }));
 

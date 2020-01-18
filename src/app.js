@@ -5,6 +5,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const lodashTemplates = require('lodash-express');
 
+const { REQUEST } = require('./const');
+
 const routes = require('./routes');
 
 module.exports = () => {
@@ -22,6 +24,18 @@ module.exports = () => {
   app.use(bodyParser.json({ limit: '500kb' }));
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(logger('dev'));
+
+  app.use((req, res, next) => {
+    req[REQUEST.DATA] = {
+      _req   : req,
+      headers: req.headers,
+      params : req.params,
+      query  : req.query,
+      body   : req.body,
+    };
+
+    next();
+  });
 
   app.use(routes);
 
