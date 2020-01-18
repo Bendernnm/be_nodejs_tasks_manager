@@ -1,0 +1,18 @@
+module.exports = {
+  FORBIDDEN                : 'Forbidden',
+  BAD_REQUEST              : 'BadRequest',
+  UNAUTHORIZED             : 'Unauthorized',
+  NEED_REFRESH_TOKEN       : 'Expired token',
+  NOTHING_TO_UPDATE        : 'Nothing to update',
+  SOMETHING_WRONG_TRY_LATER: 'Something wrong, try later',
+  PASS_ALL_REQUIRED_FIELDS : 'Please pass all required fields',
+  USER_CAN_NOT_BE_THE_SAME : 'The user cannot send deals to themselves',
+  MEMBERSHIP_ENDED         : 'Membership was ended',
+  FREE_MEMBERS_ENDED       : 'Haven\'t slots',
+  INVALID_PARAMETER        : 'Invalid parameter',
+  NOT_FOUND                : obj => `${obj} not found`,
+  INCORRECT                : obj => `Incorrect - ${obj}.`,
+  ALREADY_EXISTS           : obj => `${obj} already exists`,
+  PASS_REQUIRED_FIELDS     : fieldName => `Required fields: ${fieldName}`,
+  FILE_SO_BIG              : fileName => `To big file. File name is ${fileName}`,
+};
