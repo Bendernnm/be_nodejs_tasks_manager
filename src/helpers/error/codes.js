@@ -9,6 +9,7 @@ module.exports = {
   NOT_VALID_HEADER        : 1021,
   CAN_NOT_UPDATE          : 1033,
   OBJECT_NOT_FOUND        : 1040,
+  NOT_AUTHORIZED          : 1041,
   USER_NOT_CONFIRMED      : 1042,
   USER_BLOCKED            : 1043,
   NEED_REFRESH_TOKEN      : 1088,

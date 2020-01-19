@@ -1,8 +1,13 @@
 const { REQUEST } = require('../../const');
 
-const wrapper = (fn) => (req, res, next) => {
+const wrapper = (fn) => async (req, res, next) => {
   try {
-    return fn(req[REQUEST.DATA]);
+    // update params
+    req[REQUEST.DATA].params = { ...(req[REQUEST.DATA].params || {}), ...req.params };
+
+    const { status, data } = await fn(req[REQUEST.DATA]);
+
+    res.status(status).json(data);
   } catch (err) {
     next(err);
   }

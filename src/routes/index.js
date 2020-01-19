@@ -4,6 +4,9 @@ const { attachDb } = require('../middlewares');
 
 const { Errors, ErrorHandlers, ERROR_CODES } = require('../helpers/error');
 
+const userRouter = require('./user');
+const taskRouter = require('./task');
+
 const router = express.Router();
 
 router.use(attachDb);
@@ -11,6 +14,9 @@ router.use(attachDb);
 router.get('/', async (req, res) => res.status(200).send({ message: 'API ash 2.o' }));
 
 router.get('/view', (req, res) => res.status(200).render('index', { hash: 'd34c38d842c' }));
+
+router.use('/users', userRouter);
+router.use('/tasks', taskRouter);
 
 router.use((req, res, next) => {
   next(Errors.notFound({

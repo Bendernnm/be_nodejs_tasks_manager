@@ -19,6 +19,9 @@
     "consistent-return": "off",
     "prefer-destructuring": "off",
     "no-prototype-builtins": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "object-curly-newline": "off",
+    "no-underscore-dangle": "off",
+    "newline-per-chained-call": "off"
   }
 }

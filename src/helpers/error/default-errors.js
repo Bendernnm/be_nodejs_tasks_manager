@@ -37,6 +37,13 @@ module.exports.notFound = ({ code, target, message = 'Not Found' } = {}) => new 
   target,
 });
 
+module.exports.notAuthorized = ({ code, target = 'user', message = 'Not Authorized' } = {}) => new AppError({
+  status: 401,
+  message,
+  code,
+  target,
+});
+
 module.exports.notFoundObject = (object) => new AppError({
   status : 404,
   message: `${object} not found`,

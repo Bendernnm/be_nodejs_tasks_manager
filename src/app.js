@@ -28,6 +28,7 @@ module.exports = () => {
   app.use((req, res, next) => {
     req[REQUEST.DATA] = {
       _req   : req,
+      now    : new Date(),
       headers: req.headers,
       params : req.params,
       query  : req.query,
